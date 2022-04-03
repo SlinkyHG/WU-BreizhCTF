@@ -1,0 +1,43 @@
+version: '3'
+services:
+  des-tongues-pour-l-ete_vitrine:
+    build: ./src/vitrine
+    ports:
+      - 21002:80
+    environment:
+      - CDN_PROTO=https
+      - CDN_PORT=21000
+    networks:
+      - default
+    labels:
+      traefik.enable: 'true'
+      traefik.http.services.des-tongues-pour-l-ete_vitrine.loadbalancer.server.port: 80
+      traefik.http.routers.des-tongues-pour-l-ete_vitrine.tls: true
+      traefik.http.routers.des-tongues-pour-l-ete_vitrine.rule: 'Host(`vitrine-des-tongues-pour-l-ete.ctf.bzh`)'
+      traefik.http.routers.des-tongues-pour-l-ete_vitrine.entrypoints: websecure
+
+  des-tongues-pour-l-ete_cdn:
+    build: ./src/cdn
+    ports:
+      - 21003:80
+    networks:
+      - default
+    labels:
+      traefik.enable: 'true'
+      traefik.http.services.des-tongues-pour-l-ete_cdn.loadbalancer.server.port: 80
+      traefik.http.routers.des-tongues-pour-l-ete_cdn.tls: true
+      traefik.http.routers.des-tongues-pour-l-ete_cdn.rule: 'Host(`cdn-des-tongues-pour-l-ete.ctf.bzh`)'
+      traefik.http.routers.des-tongues-pour-l-ete_cdn.entrypoints: websecure
+
+  des-tongues-pour-l-ete_api:
+    build: ./src/api
+    ports:
+      - 21004:3000
+    networks:
+      - default
+    labels:
+      traefik.enable: 'true'
+      traefik.http.services.des-tongues-pour-l-ete_api.loadbalancer.server.port: 3000
+      traefik.http.routers.des-tongues-pour-l-ete_api.tls: true
+      traefik.http.routers.des-tongues-pour-l-ete_api.rule: 'Host(`api.des-tongues-pour-l-ete.ctf.bzh`) || Host(`api-des-tongues-pour-l-ete.ctf.bzh`)'
+      traefik.http.routers.des-tongues-pour-l-ete_api.entrypoints: websecure

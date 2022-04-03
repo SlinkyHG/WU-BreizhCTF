@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "target": "es5",
+    "lib": ["es6"],
+    "types": ["reflect-metadata", "swagger-express-typescript"],
+    "module": "commonjs",
+    "moduleResolution": "node"
+  }
+}
