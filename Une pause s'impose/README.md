@@ -3,35 +3,6 @@
 ## Description
 
 ```
-Une pause s'impose ! Allons tenter de battre le record de Cabir sur Counter Strike Source, il a réussi à atteindre l'autre coté de la map en moins de 5 secondes... Une vrai fusée
-
-Retrouvez le serveur dans l'onglet "LAN" sur Counter Strike: Source
-
-Format du flag : BZHCTF{}
-```
-
-## Flag
-
-BZHCTF{COURIR_C_EST_POUR_LES_FAIBLES}
-
-## Solution
-
-TODO: Cheat engine
-
-# Une pause s'impose ! 2/3 - Easy
-
-## Auteur
-
-Slinky
-# Une pause s'impose ! 3/3 - Medium
-
-## Auteur
-
-Slinky
-
-## Description
-
-```
 Une pause s'impose ! Vous faites un break ? C'est parti pour une p'tite game sur Counter Strike: Source !
 Rendez-vous sur le serveur une-pause-s-impose.ctf.bzh:<27015/27025/27035/27045>. 
 D'ailleurs, il paraît que l'admin du serveur à développé un plugin sourcemod breizh.smx, Si vous mettez la main dessus, voyez ce que vous pouvez faire avec.
