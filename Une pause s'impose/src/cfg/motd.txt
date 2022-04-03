@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Cstrike MOTD</title>
+    </head>
+    <body scroll="auto" style="text-align:center;">
+        <iframe
+                title="Inline Frame Example"
+                width="90%"
+                height="99%"
+                src="http://web.une-pause-s-impose.ctf.bzh:21009?file=rules">
+        </iframe>
+    </body>
+</html>

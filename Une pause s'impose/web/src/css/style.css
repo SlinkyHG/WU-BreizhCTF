@@ -1,0 +1,51 @@
+html{
+    background-color: #333333;
+    font-family: "Open Sans", Verdana, Geneva, sans-serif;
+}
+
+.container {
+  width: 90%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+.title{
+  font-size: 50px;
+  font-weight: bold;
+  color: #54b02f;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.text{
+    font-size: 16px;
+    font-weight: bold;
+    color: #54b02f;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.paragraph {
+    background-color: #707070;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: justify;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}

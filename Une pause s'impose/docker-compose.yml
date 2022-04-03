@@ -1,0 +1,61 @@
+---
+version: "3"
+
+services:
+  une-pause-s-impose_server:
+    build: ./
+    restart: always
+    ports:
+      - 27015:27015/udp
+      - 27015:27015
+    mem_limit: 2048m
+    volumes:
+      - une-pause-s-impose:/mnt/server
+
+  une-pause-s-impose_server-2:
+    restart: always
+    build: ./
+    ports:
+      - 27025:27015/udp
+      - 27025:27015
+    mem_limit: 2048m
+    volumes:
+      - une-pause-s-impose:/mnt/server
+
+  une-pause-s-impose_server-3:
+    restart: always
+    build: ./
+    ports:
+      - 27035:27015/udp
+      - 27035:27015
+    mem_limit: 2048m
+    volumes:
+      - une-pause-s-impose:/mnt/server
+
+  une-pause-s-impose_server-4:
+    restart: always
+    build: ./
+    ports:
+      - 27045:27015/udp
+      - 27045:27015
+    mem_limit: 2048m
+    volumes:
+      - une-pause-s-impose:/mnt/server
+  une-pause-s-impose_web:
+    build: ./web 
+    volumes:
+      -  une-pause-s-impose:/mnt/server
+    ports:
+      - "21009:80"
+    depends_on:
+      - une-pause-s-impose_server
+    labels:
+      traefik.enable: 'true'
+      traefik.http.services.une-pause-s-impose.loadbalancer.server.port: 80
+      traefik.http.routers.une-pause-s-impose.tls: true
+      traefik.http.routers.une-pause-s-impose.rule: 'Host(`une-pause-s-impose.ctf.bzh`)'
+      traefik.http.routers.une-pause-s-impose.entrypoints: websecure
+
+
+volumes:
+  une-pause-s-impose:
